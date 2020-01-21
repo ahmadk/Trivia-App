@@ -1,0 +1,33 @@
+<div class="fixed-top">
+    <ul class="nav nav-fill">
+        <li class="nav-item list-group-item-light">
+            <a class="nav-link active" href="#">Question {{id}}/{{numOfQuestion}}</a>
+        </li>
+        <li class="nav-item list-group-item-light">
+            <a class="nav-link" href="#">{{points}} Points</a>
+        </li>
+        <li class="nav-item list-group-item-light">
+            <a class="nav-link" href="#">Remaining Time</a>
+        </li>
+    </ul>
+</div>
+
+<div *ngIf="!!model">
+    <div class="container">
+              <div class="row justify-content-md-center align-items-center mb-3">
+          
+            <div class="col-md-auto">
+                <h1 class="text-center">{{model.question}}</h1>
+            </div>
+          
+        </div>
+        
+        <div class="row justify-content-md-center align-items-center" *ngFor="let answer of getAnswers()">
+            <div class="col-md-6 mb-3">
+                <button class="btn btn-light btn-block" type="button" (click)="checkChoice(answer)">
+                    {{answer}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

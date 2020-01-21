@@ -1,0 +1,33 @@
+<div class="jumbotron text-center m-0 bg-info d-flex flex-column justify-content-center">
+    <div class="text-center mt-3">
+        <img class="img-fluid" alt="Angular Logo" width="100vh"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
+    </div>
+
+    <h1 class="display-4">A TRIVIA GAME</h1>
+    <!-- <h4 class="lead mb-4">Select difficallity level bellow</h4> -->
+
+    <div class="row text-center">
+        <div class="col">
+            <div class="btn-group mr-2" dropdown>
+                <button id="button-basic" dropdownToggle type="button" class="btn btn-light dropdown-toggle"
+                    aria-controls="dropdown-basic">
+                    {{selectedLevel}} <span class="caret"></span>
+                </button>
+                <div *dropdownMenu class="dropdown-menu" role="menu">
+                    <button class="dropdown-item" type="button" *ngFor="let level of levels"
+                        (click)="levelChanged(level)">{{level}}</button>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-light" (click)="startGame()">
+                GET STARTED
+            </button>
+            <!-- <div>
+                <ng-lottie [options]="options" (animationCreated)="animationCreated($event)" width="50px" height="60px"
+                containerClass="moving-box"></ng-lottie>
+            </div> -->
+
+        </div>
+    </div>
+</div>
